@@ -2,13 +2,23 @@ import React, { useState } from 'react'
 import Layout from '../../components/Layout'
 import { Container, Row, Col, Button, Form } from 'react-bootstrap'
 import Input from '../../components/UI/Input'
+import { useDispatch, useSelector } from 'react-redux';
+import {Routes,Route, useNavigate,Navigate} from 'react-router-dom'
 
 function Signup() {
   const [first,setfirst]=useState('');
   const [last,setlast]=useState('');
   const [email,setemail]=useState('');
   const [password,setpassword]=useState('');
+  const auth=useSelector(state=>state.auth);
+  // const nevigate=useNevigate();
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
 
+  if(auth.authenticate){
+    return <Navigate to="/"/>
+       
+   }
  
 
   return (

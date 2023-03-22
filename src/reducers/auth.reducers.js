@@ -32,9 +32,18 @@ export default (state=initState,action)=>{
             break;  
             case authConstants.LOGIN_FAILURE:
                 state={
-                    ...state
+                    ...state,
+                    
                 } 
-                break;       
+                break;
+             case authConstants.LOGOUT_REQUEST:
+                
+             state={       
+                   ...state,
+                   
+
+                }          
+                break;
     }
     return state
 }

@@ -68,3 +68,13 @@ export const isUserLoggedIn=()=>{
     }
 
 }
+
+export const signout=()=>{
+   
+    return async dispatch=>{
+        window.localStorage.clear();
+        dispatch({
+            type:authConstants.LOGOUT_REQUEST
+        })
+    }
+}

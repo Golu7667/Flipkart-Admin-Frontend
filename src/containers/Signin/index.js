@@ -4,7 +4,7 @@ import { Container, Form, Row, Col, Button } from 'react-bootstrap'
 import Input from '../../components/UI/Input'
 import {isUserLoggedIn, login} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
-import {Routes,Route, useNavigate} from 'react-router-dom'
+import {Routes,Route, useNavigate,Navigate} from 'react-router-dom'
 import Home from '../Home';
 function Signin() {
    
@@ -15,20 +15,19 @@ function Signin() {
   // const nevigate=useNevigate();
   const dispatch=useDispatch();
   const navigate=useNavigate();
-  useEffect(()=>{
-    if(!auth.authenticate){
-      dispatch(isUserLoggedIn());
-    }
-    if(auth.authenticate){
-      
-      navigate('/')
+  //  useEffect(()=>{
+  //   if(!auth.authenticate){
+  //     dispatch(isUserLoggedIn());
+  //   }
+   
+  //     console.log("::::")
+  // },[auth.authenticate]);
+   
+  // if(auth.authenticate){
+    
+  //   return <Navigate to="/"/>
        
-         
-     }
-      console.log("::::")
-  },[auth.authenticate]);
-
-
+  //  }
      const userLogin=(e)=>{
       e.preventDefault();
       const user={

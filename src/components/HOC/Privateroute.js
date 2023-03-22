@@ -9,9 +9,10 @@ function Privateroute(props) {
      console.log(history.navigate);
      console.log(history.location)
      if(!token){
+          console.log(!token)
           return <Navigate to="/signin" state={{from:history.location}}/>
      }
-    return props.name
+    return props.name;
 
 
 }
