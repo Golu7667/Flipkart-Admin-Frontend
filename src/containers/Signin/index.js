@@ -15,17 +15,21 @@ function Signin() {
   // const nevigate=useNevigate();
   const dispatch=useDispatch();
   const navigate=useNavigate();
-  //  useEffect(()=>{
-  //   if(!auth.authenticate){
-  //     dispatch(isUserLoggedIn());
-  //   }
-   
-  //     console.log("::::")
-  // },[auth.authenticate]);
-   
-  // if(auth.authenticate){
+  
+  // if(window.localStorage.getItem('token')===null){
     
   //   return <Navigate to="/"/>
+       
+  //  }
+  // useEffect(()=>{
+   
+  //   const a=async()=>{await auth}
+    
+   
+  //  },[]);
+  //  if(auth.authenticate){
+  //   console.log(auth.authenticate)
+  //   return <Navigate to="/signup"/>
        
   //  }
      const userLogin=(e)=>{

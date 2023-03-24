@@ -24,7 +24,7 @@ function App() {
       dispatch(isUserLoggedIn());
       
     }
-  },[]);
+  },[auth.authenticate]);
 
   history.navigate = useNavigate();
   history.location = useLocation();

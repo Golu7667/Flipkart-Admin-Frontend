@@ -1,15 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
 import {useDispatch, useSelector} from 'react-redux'
 import { signout } from '../../actions';
+
 function Header() {
 
+
+     
     const auth =useSelector(state=> state.auth);
     const dispatch=useDispatch();
     const logout=()=>{
-        dispatch(signout())
+         dispatch(signout())
     }
+    // useEffect(()=>{
+   
+    //  const a=async()=>{await auth}
+     
+    
+    // },[]);
+  
+
+
+
   const renderLoggedInLinks = () => {
 
     return (
@@ -52,7 +65,7 @@ function Header() {
             </NavDropdown.Item>
           </NavDropdown> */}
             </Nav>
-            {auth.authenticate ? renderLoggedInLinks(): renderNonLoggedInLinks()}
+            {auth. authenticate?renderLoggedInLinks():renderNonLoggedInLinks()}
           </Navbar.Collapse >
         </Container>
       </Navbar>

@@ -39,8 +39,8 @@ export default (state=initState,action)=>{
              case authConstants.LOGOUT_REQUEST:
                 
              state={       
-                   ...state,
-                   
+                   ...initState,
+                   authenticate:false,
 
                 }          
                 break;
