@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { NavLink, Link } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
 import {useDispatch, useSelector} from 'react-redux'
@@ -12,16 +12,9 @@ function Header() {
     const dispatch=useDispatch();
     const logout=()=>{
          dispatch(signout())
+        
     }
-    // useEffect(()=>{
-   
-    //  const a=async()=>{await auth}
-     
     
-    // },[]);
-  
-
-
 
   const renderLoggedInLinks = () => {
 

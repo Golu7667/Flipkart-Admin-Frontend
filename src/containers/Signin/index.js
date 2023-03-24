@@ -4,7 +4,7 @@ import { Container, Form, Row, Col, Button } from 'react-bootstrap'
 import Input from '../../components/UI/Input'
 import {isUserLoggedIn, login} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
-import {Routes,Route, useNavigate,Navigate} from 'react-router-dom'
+import {useNavigate,Navigate} from 'react-router-dom'
 import Home from '../Home';
 function Signin() {
    
@@ -12,26 +12,16 @@ function Signin() {
   const [password,setpassword]=useState('');
   const [error,seterror]=useState('');
   const auth=useSelector(state=>state.auth);
-  // const nevigate=useNevigate();
+  
   const dispatch=useDispatch();
   const navigate=useNavigate();
   
-  // if(window.localStorage.getItem('token')===null){
-    
-  //   return <Navigate to="/"/>
+  
+   if(auth.authenticate){
+
+    return <Navigate to="/"/>
        
-  //  }
-  // useEffect(()=>{
-   
-  //   const a=async()=>{await auth}
-    
-   
-  //  },[]);
-  //  if(auth.authenticate){
-  //   console.log(auth.authenticate)
-  //   return <Navigate to="/signup"/>
-       
-  //  }
+   }
      const userLogin=(e)=>{
       e.preventDefault();
       const user={

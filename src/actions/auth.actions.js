@@ -36,20 +36,7 @@ export const login = (user) => {
 export const isUserLoggedIn=()=>{
     return async (dispatch)=>{
         const token=localStorage.getItem('token')
-        // if(token){
-        //     dispatch({
-        //             payload:{
-        //                 token
-        //             }
-        //         })
-        // }else{
-        //     dispatch({
-        //         payload:{
-        //            authenticate:false,
-        //            message:"User needs to login"
-        //         }
-        //     })
-        // }
+        
         if(token){
             const user=JSON.parse(localStorage.getItem('user'));
             dispatch({
@@ -71,7 +58,7 @@ export const isUserLoggedIn=()=>{
 
 export const signout=()=>{
    
-    return async dispatch=>{
+    return async (dispatch)=>{
         window.localStorage.clear();
         dispatch({
             type:authConstants.LOGOUT_REQUEST

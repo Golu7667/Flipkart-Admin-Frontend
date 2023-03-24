@@ -40,8 +40,6 @@ export default (state=initState,action)=>{
                 
              state={       
                    ...initState,
-                   authenticate:false,
-
                 }          
                 break;
     }
