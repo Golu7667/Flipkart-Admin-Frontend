@@ -12,6 +12,8 @@ import Privateroute from './components/HOC/Privateroute';
 import { isUserLoggedIn } from './actions';
 import { history } from './components/HOC/helper';
 import { useSelector ,useDispatch} from 'react-redux';
+import Products from './containers/Products';
+import Orders from './containers/Orders';
 
 
 function App() {
@@ -36,6 +38,10 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Privateroute name={<Home />} />} />
+        <Route path="/products" element={<Privateroute name={<Products/>} />} />
+        <Route path="/orders" element={<Privateroute name={<Orders/>}/>} />
+
+
         <Route path='/signin' element={<Signin />} />
         <Route path='/signup' element={<Signup />} />
         {/* <Route path="*" element={<Navigate to="/" />} /> */}

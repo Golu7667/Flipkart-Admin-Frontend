@@ -4,35 +4,54 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap'
 import Input from '../../components/UI/Input'
 import { useDispatch, useSelector } from 'react-redux';
 import {Routes,Route, useNavigate,Navigate} from 'react-router-dom'
+import {signup} from '../../actions/user.actions'
+
 
 function Signup() {
-  const [first,setfirst]=useState('');
-  const [last,setlast]=useState('');
+  const [firstName,setfirst]=useState('');
+  const [lastName,setlast]=useState('');
   const [email,setemail]=useState('');
   const [password,setpassword]=useState('');
   const auth=useSelector(state=>state.auth);
+  const User=useSelector(state=>state.user)
   // const nevigate=useNevigate();
   const dispatch=useDispatch();
   const navigate=useNavigate();
+  console.log(password)
+ const userSignup=(e)=>{
+  e.preventDefault();
+    
+      const user={
+        firstName,lastName,email,password
+      }
+    
+      dispatch(signup(user))
+ }
 
   if(auth.authenticate){
     return <Navigate to="/"/>
        
    }
  
+   if(User.loading){
+    console.log("kkkkkk")
+    return <p>Loading...</p>
+   }
 
   return (
-    <Layout>
+    <>
+    <Layout/>
       <Container>
+         {User.message}
         <Row style={{ marginTop: '50px' }}>
           <Col md={{ span: 6, offset: 3 }}>
-            <Form>
+            <Form onSubmit={userSignup}>
               <Row>
                 <Col md={6}>
                   <Input
                     label="First Name"
                     placeholder="First Name"
-                    value={first}
+                    value={firstName}
                     type="text"
                     onChange={(e)=>{setfirst(e.target.value)}}
                   />
@@ -41,7 +60,7 @@ function Signup() {
                 <Input
                     label="Last Name"
                     placeholder="Last Name"
-                    value={last}
+                    value={lastName}
                     type="text"
                     onChange={(e)=>{setlast(e.target.value)}}
                   />
@@ -59,7 +78,7 @@ function Signup() {
                     placeholder="Password"
                     value={password}
                     type="password"
-                    onChange={(e)=>{setpassword(e.target.password)}}
+                    onChange={(e)=>{setpassword(e.target.value)}}
                   />
               
 
@@ -67,11 +86,12 @@ function Signup() {
                 Submit
               </Button>
             </Form>
+           
           </Col>
         </Row>
 
       </Container>
-    </Layout>
+      </>
 
   )
 }

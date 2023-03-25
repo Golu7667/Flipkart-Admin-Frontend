@@ -33,8 +33,8 @@ function Signin() {
      }
    
   return (
-
-    <Layout>
+    <>
+      <Layout/>
       <Container>
         <Row style={{ marginTop: '50px' }}>
           <Col md={{ span: 6, offset: 3 }}>
@@ -63,7 +63,7 @@ function Signin() {
         </Row>
 
       </Container>
-    </Layout>
+      </>
 
   )
 }
