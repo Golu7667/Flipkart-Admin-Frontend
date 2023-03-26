@@ -14,6 +14,7 @@ import { history } from './components/HOC/helper';
 import { useSelector ,useDispatch} from 'react-redux';
 import Products from './containers/Products';
 import Orders from './containers/Orders';
+import Category from './containers/Category';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Privateroute name={<Home />} />} />
+        <Route path="/category" element={<Privateroute name={<Category/>} />} />
         <Route path="/products" element={<Privateroute name={<Products/>} />} />
         <Route path="/orders" element={<Privateroute name={<Orders/>}/>} />
 
