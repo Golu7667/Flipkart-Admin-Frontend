@@ -1,0 +1,23 @@
+.sidebar ul{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar ul li{
+    list-style: none;
+}
+
+.sidebar ul li a{
+    display: block;
+    color: black;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin: 5px 0 5px 10px;
+    border-radius: 5px 0 0 5px;
+    text-decoration: none;
+}
+
+.sidebar ul li a.active{
+    background: rgb(14, 13, 13);
+    color: aliceblue;
+}

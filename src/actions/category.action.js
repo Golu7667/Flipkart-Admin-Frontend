@@ -29,7 +29,7 @@ export const addCategory=(cat)=>{
         console.log(res+"gjgjgjgjgj")
         if(res.status===201){
             dispatch({type:categoryConstansts.ADD_NEW_CATEGORY_SUCCESS,
-            payload:res.data.category
+            payload:{category:res.data.category}
         })
         }else{
             dispatch({type:categoryConstansts.ADD_NEW_CATEGORY_FAILURE,
