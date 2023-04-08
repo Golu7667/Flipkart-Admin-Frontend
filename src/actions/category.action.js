@@ -22,10 +22,11 @@ export const getAllCategory=()=>{
 }
 
 
-export const addCategory=(form)=>{
+export const addCategory=(cat)=>{
     return async dispatch=>{
         dispatch({type:categoryConstansts.ADD_NEW_CATEGORY_REQUEST})
-        const res=await axios.post('/category/create',form)
+        const res=await axiosIntance.post('/category/create',cat)
+        console.log(res+"gjgjgjgjgj")
         if(res.status===201){
             dispatch({type:categoryConstansts.ADD_NEW_CATEGORY_SUCCESS,
             payload:res.data.category
