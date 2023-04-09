@@ -4,7 +4,8 @@ import { categoryConstansts, initialDataConstansts, productConstants } from "./c
 export const getInitailData=()=>{
    return async dispatch=>{
     
-        const res=await axiosIntance.get('/initailData')
+        const res=await axiosIntance.get('/initialData')
+        console.log(res.status)
         if(res.status===200){
           const {categories,products}=res.data;
           dispatch({
@@ -16,7 +17,7 @@ export const getInitailData=()=>{
             payload:{products}
           })
         } 
-         console.log(res)
+       
    
    
    

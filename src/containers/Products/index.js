@@ -21,6 +21,9 @@ function Products(props) {
    const dispatch=useDispatch()
 
 const category=useSelector(state=>state.category)
+const product=useSelector(state=>state.product)
+console.log(product.products.length)
+
 
   const handleClose = () => {
     
@@ -81,16 +84,31 @@ const category=useSelector(state=>state.category)
         </tr>
       </thead>
       <tbody>
-        <tr>
+       {    
+       
+       product.products.length>0 ?
+        product.products.map(p=>
+          <tr key={p._id}>
           <td>1</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
+          <td>{p.name}</td>
+          <td>{p.price}</td>
+          <td>{p.quantity}</td>
+          <td>{p.descripation}</td>
+          <td></td>
          
         </tr>
-        
+
+        )
+        :null }
+      
+         
+      
+          <td>1</td>
+          <td>kk</td>
+          <td>5000</td>
+          <td>ppp</td>
+          <td>uuu</td>
+          <td></td>
       </tbody>
     </Table>
      )

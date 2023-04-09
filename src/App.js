@@ -28,7 +28,7 @@ function App() {
       
     }
     dispatch(getInitailData())
-  },[auth.authenticate]);
+  },[]);
 
   history.navigate = useNavigate();
   history.location = useLocation();
