@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import Layout from '../../components/Layout'
 import Sidebar from '../../components/Layout/sidebar'
-import Modal from 'react-bootstrap/Modal';
 import { Container, Row, Col } from 'react-bootstrap';
 import Input from '../../components/UI/Input';
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '../../actions/product.action';
+import Model from '../../components/UI/Model';
+import Table from 'react-bootstrap/Table';
 
 function Products(props) {
 
@@ -65,6 +66,37 @@ const category=useSelector(state=>state.category)
       e.target.files[0]
     ])
   }
+   const renderProducts=()=>{
+     return (
+      <Table responsive="sm">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Descripation</th>
+          <th>Category</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+         
+        </tr>
+        
+      </tbody>
+    </Table>
+     )
+   }
+
+
 
   return (<>
     <Layout />
@@ -78,15 +110,21 @@ const category=useSelector(state=>state.category)
           </div>
         </Col>
       </Row>
+      <Row>
+        <Col>
+           {
+            renderProducts()
+           }
+        </Col>
+      </Row>
     </Container>
 
 
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Add New Category</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Input
+   <Model show={show}
+   handleClose={handleClose}
+   modalTitle={'Add New Product'}
+   >
+   <Input
           label="Name"
           value={name}
           placehoder={"Product Name"}
@@ -126,14 +164,7 @@ const category=useSelector(state=>state.category)
           productPictures.map((pic,index)=><div key={index}>{pic.name}</div>):null
         }
         <input type='file' name="productPictures" onChange={handleProductPictures}/>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="primary" onClick={handleClose}>
-          Save Changes
-        </Button>
-      </Modal.Footer>
-    </Modal>
-
+   </Model>
 
   </>
 

@@ -18,7 +18,7 @@ const Sidebar=(props)=> {
                 
             </ul>
         </Col>
-        <Col md={10} style={{marginLeft:'auto'}}>{props.name}</Col>
+        <Col md={10} style={{marginLeft:'auto' ,paddingTop:'60px'}}>{props.name}</Col>
       </Row>
     </Container> 
   )

@@ -37,7 +37,7 @@ function Header() {
   }
   return (
     <>
-      <Navbar bg="dark" expand="lg" variant='dark' style={{ zIndex: 1 }}>
+      <Navbar bg="dark" fixed="top" expand="lg" variant='dark' style={{ zIndex: 1 }}>
         <Container fluid>
           {/* <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand> */}
           <Link to="/" className='navbar-brand'>Admin Dashboard</Link>

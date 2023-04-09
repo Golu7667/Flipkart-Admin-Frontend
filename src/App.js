@@ -9,7 +9,7 @@ import Privateroute from './components/HOC/Privateroute';
 // import Nav from 'react-bootstrap/Nav';
 // import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-import { isUserLoggedIn } from './actions';
+import { getAllCategory, isUserLoggedIn ,getInitailData} from './actions';
 import { history } from './components/HOC/helper';
 import { useSelector ,useDispatch} from 'react-redux';
 import Products from './containers/Products';
@@ -27,6 +27,7 @@ function App() {
       dispatch(isUserLoggedIn());
       
     }
+    dispatch(getInitailData())
   },[auth.authenticate]);
 
   history.navigate = useNavigate();
