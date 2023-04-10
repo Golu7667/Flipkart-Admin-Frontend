@@ -7,7 +7,7 @@ import "./sidebar.css"
 
 const Sidebar=(props)=> {
   return (
-    <Container fluid>
+    <Container fluid  >
     <Row>
         <Col md={2} className="sidebar">
             <ul>
@@ -18,7 +18,7 @@ const Sidebar=(props)=> {
                 
             </ul>
         </Col>
-        <Col md={10} style={{marginLeft:'auto' ,paddingTop:'60px'}}>{props.name}</Col>
+        <Col md={10} style={{width:'80%'}}>{props.name}</Col>
       </Row>
     </Container> 
   )
