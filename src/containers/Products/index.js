@@ -88,7 +88,7 @@ function Products(props) {
                   <td>{p.name}</td>
                   <td>{p.price}</td>
                   <td>{p.quantity}</td>
-                  <td>{p.descripation}</td>
+                  {/* <td>{p.descripation}</td> */}
                   <td>{p.category.name}</td>
 
                 </tr>
@@ -200,9 +200,10 @@ function Products(props) {
         <Row>
           <Col md="12">
             <label className='key'>Descripation</label>
-            <p className='value'>{productDetails.descripation}</p>
+            <p className='value'>{productDetails.description}</p>
           </Col>
-          {console.log(productDetails.descripation+"uuu")}
+         
+
         </Row>
         <Row>
           <Col >

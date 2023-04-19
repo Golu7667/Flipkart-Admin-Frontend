@@ -38,10 +38,11 @@ function Header() {
   return (
     <>
       <Navbar bg="dark" fixed="top" expand="lg" variant='dark' style={{ zIndex: 1 }}>
-        <Container fluid>
-          {/* <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand> */}
-          <Link to="/" className='navbar-brand'>Admin Dashboard</Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Container fluid style={{display:'flex',textAlign: 'center', justifyContent:'center' }}>
+          <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>
+          {/* <Link to="/" className='navbar-brand'  >Admin Dashboard</Link> */}
+        
+          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
             </Nav>
