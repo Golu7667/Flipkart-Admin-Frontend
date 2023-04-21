@@ -9,6 +9,9 @@ import Button from 'react-bootstrap/Button';
 import Input from '../../components/UI/Input';
 import FormData from 'form-data';
 import Model from '../../components/UI/Model';
+import { MDBCheckbox } from 'mdb-react-ui-kit';
+
+
 
 
 const Category = () => {
@@ -18,10 +21,7 @@ const Category = () => {
   const [categoryName, setCategoryName] = useState('');
   const [prentCategoryId, setPrentCategoryId] = useState('')
   const [categoryImage, setCategoryImage] = useState('')
-  // useEffect(() => {
-  //   console.log("Kk")
-  //   dispatch(getAllCategory())
-  // }, [])
+ 
 
   const handleClose = () => {
 
@@ -31,8 +31,7 @@ const Category = () => {
       parentId: prentCategoryId,
       categoryImage: categoryImage
     }
-    // const t=JSON.stringify(cat);
-
+  
     dispatch(addCategory(cat))
     setCategoryName('')
     setPrentCategoryId('')
@@ -46,10 +45,18 @@ const Category = () => {
 
     for (let category of categories) {
       myCategories.push(
-        <li>
-          {category.name}
-          {category.children.length > 0 ? (<ul>{renderCategories(category.children)}</ul>) : null}
+        <div style={{width:'100px'}}>
+        <li style={{textDecoration:'none' ,listStyle:'none' ,width:'100px'}}>
+          {/* {<MDBCheckbox name='flexCheck' value='1' id='q' label={category.name}/> } */}
+          <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+  <label class="form-check-label" for="flexCheckDefault">
+   {category.name}
+  </label>
+</div>
+          {category.children.length > 0 ? (<ul style={{width:'100px' }}>{  renderCategories(category.children)}</ul>) : null}
         </li>
+        </div>
       )
     }
     return myCategories
@@ -75,23 +82,25 @@ const Category = () => {
   return (
     <>
       <Layout />
+     
+      <Container  fluid>
       <Sidebar name="category" />
-      <Container style={{ marginLeft: '250px', width: 'auto' }}>
-
-        <Row >
-          <Col md={12}>
+        <Row style={{marginLeft:'250px'}}>
+          <Col md={10}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <h3>Category</h3>
-              <button onClick={handleShow}>Add</button>
+              <button onClick={handleShow} style={{borderRadius:5,fontSize:20}}>Add</button>
+             
+
             </div>
           </Col>
         </Row>
         <Row>
-          <Col md={2}>
-            <ul>
+          <Col md={100} width='90px'>
+            <div style={{marginLeft:'250px'}}>
               {renderCategories(category.categories)}
               {/* {JSON.stringify(createCategoryList(category.categories))} */}
-            </ul>
+            </div>
           </Col>
         </Row>
       </Container>

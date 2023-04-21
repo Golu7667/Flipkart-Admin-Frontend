@@ -10,8 +10,8 @@ import Model from '../../components/UI/Model';
 import Table from 'react-bootstrap/Table';
 import './style.css'
 import {generatePublicUrl} from '../../urlConfig'
-
-
+import {AiOutlineEye,AiOutlineEdit} from 'react-icons/ai'
+import {RiDeleteBinLine}   from 'react-icons/ri'
 
 function Products(props) {
 
@@ -67,7 +67,7 @@ function Products(props) {
   }
   const renderProducts = () => {
     return (
-      <Table responsive="sm" style={{ marginLeft: '150px', marginTop: '50px' }} >
+      <Table responsive="sm" style={{ marginLeft: '100px', marginTop: '50px',padding:'50px' }} >
         <thead>
           <tr>
             <th>#</th>
@@ -75,7 +75,9 @@ function Products(props) {
             <th>Price</th>
             <th>Quantity</th>
             <th>Category</th>
-
+             <th>See</th>
+             <th>Edit</th>
+             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -90,7 +92,9 @@ function Products(props) {
                   <td>{p.quantity}</td>
                   {/* <td>{p.descripation}</td> */}
                   <td>{p.category.name}</td>
-
+                  <td>{<AiOutlineEye/>}</td>
+                  <td>{<AiOutlineEdit/>}</td>
+                  <td>{<RiDeleteBinLine/>}</td>
                 </tr>
 
               )
@@ -226,9 +230,11 @@ function Products(props) {
 
   return (<>
     <Layout />
+   
+    <Container >
     <Sidebar name="Products" />
-    <Container>
-      <Row >
+       <Container style={{marginLeft:'10px'}}>
+       <Row >
         <Col md={12}>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <h3>Category</h3>
@@ -236,6 +242,9 @@ function Products(props) {
           </div>
         </Col>
       </Row>
+       </Container>
+     
+      <Container fluid style={{marginLeft:'10px'}}>
       <Row>
         <Col>
           {
@@ -243,7 +252,9 @@ function Products(props) {
           }
         </Col>
       </Row>
-    </Container>
+      </Container>
+      
+    </Container >
     {
       renderAddProductModel()
     }

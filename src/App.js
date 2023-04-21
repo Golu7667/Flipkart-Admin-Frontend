@@ -1,5 +1,5 @@
 import React ,{useEffect, useState}from 'react'
-import './App.css';
+// import './App.css';
 import Layout from './components/Layout';
 import Home from './containers/Home/index';
 import Signin from './containers/Signin/index';
@@ -39,8 +39,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Privateroute name={<Home />} />} />
-        <Route path="/category" element={<Privateroute name={<Category/>} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/category" element={<Category/>}  />
         <Route path="/products" element={<Privateroute name={<Products/>} />} />
         <Route path="/orders" element={<Privateroute name={<Orders/>}/>} />
 
