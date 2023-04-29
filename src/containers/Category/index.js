@@ -21,7 +21,7 @@ const Category = () => {
   const [categoryName, setCategoryName] = useState('');
   const [prentCategoryId, setPrentCategoryId] = useState('')
   const [categoryImage, setCategoryImage] = useState('')
- 
+
 
   const handleClose = () => {
 
@@ -31,7 +31,7 @@ const Category = () => {
       parentId: prentCategoryId,
       categoryImage: categoryImage
     }
-  
+
     dispatch(addCategory(cat))
     setCategoryName('')
     setPrentCategoryId('')
@@ -45,17 +45,17 @@ const Category = () => {
 
     for (let category of categories) {
       myCategories.push(
-        <div style={{width:'100px'}}>
-        <li style={{textDecoration:'none' ,listStyle:'none' ,width:'100px'}}>
-          {/* {<MDBCheckbox name='flexCheck' value='1' id='q' label={category.name}/> } */}
-          <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-  <label class="form-check-label" for="flexCheckDefault">
-   {category.name}
-  </label>
-</div>
-          {category.children.length > 0 ? (<ul style={{width:'100px' }}>{  renderCategories(category.children)}</ul>) : null}
-        </li>
+        <div style={{ width: '500px', border: '2px solid green', height: '50px', display: 'flex', }}>
+
+          {<MDBCheckbox name='flexCheck' value='1' id='q' label={category.name} />}
+          <div style={{ display: 'flex' }}>
+
+
+            {category.name}
+
+          </div>
+          {/* {category.children.length > 0 ? (<ul style={{width:'100px' }}>{  renderCategories(category.children)}</ul>) : null} */}
+
         </div>
       )
     }
@@ -82,28 +82,45 @@ const Category = () => {
   return (
     <>
       <Layout />
-     
-      <Container  fluid>
-      <Sidebar name="category" />
-        <Row style={{marginLeft:'250px'}}>
-          <Col md={10}>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h3>Category</h3>
-              <button onClick={handleShow} style={{borderRadius:5,fontSize:20}}>Add</button>
-             
 
+      <div style={{ width: '100%', display: 'flex' }} >
+      <div style={{width:'15%'}}>
+        <Sidebar />
+        </div>
+         <div style={{width:'85%'}}>
+        {/* < div style={{ height: '50px', backgroundColor: 'red', width: 'auto' }}>
+          
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <h3>Category</h3>
+                <button onClick={handleShow} style={{ borderRadius: 5, fontSize: 20 }}>Add</button>
+
+
+              </div>
+          
+        </div>  */}
+
+        <div style={{marginTop:'50px'}}>
+          <div class="card" style={{ width: '18rem', margin: '0px 0px 0px 0px' }}>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
             </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={100} width='90px'>
-            <div style={{marginLeft:'250px'}}>
-              {renderCategories(category.categories)}
-              {/* {JSON.stringify(createCategoryList(category.categories))} */}
+          </div>
+          <div class="card" style={{ width: '18rem', margin: '0px 0px 0px 0px' }}>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div >
+      </div>
       <Model
         show={show}
         handleClose={handleClose}
@@ -126,7 +143,7 @@ const Category = () => {
         </select>
         <input type="file" name="categoryImage" onChange={e => handleCategoryImage(e)} />
       </Model>
-      
+
     </>
   )
 }

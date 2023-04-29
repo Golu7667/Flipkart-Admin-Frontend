@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Layout from '../../components/Layout'
 import Sidebar from '../../components/Layout/sidebar'
+import sideButton from '../../components/Layout/sideButton'
 import { Container, Row, Col } from 'react-bootstrap';
 import Input from '../../components/UI/Input';
 import Button from 'react-bootstrap/Button';
@@ -9,9 +10,10 @@ import { addProduct } from '../../actions/product.action';
 import Model from '../../components/UI/Model';
 import Table from 'react-bootstrap/Table';
 import './style.css'
-import {generatePublicUrl} from '../../urlConfig'
-import {AiOutlineEye,AiOutlineEdit} from 'react-icons/ai'
-import {RiDeleteBinLine}   from 'react-icons/ri'
+import { generatePublicUrl } from '../../urlConfig'
+import { AiOutlineEye, AiOutlineEdit } from 'react-icons/ai'
+import { RiDeleteBinLine } from 'react-icons/ri'
+import { CgPathDivide } from 'react-icons/cg';
 
 function Products(props) {
 
@@ -67,7 +69,7 @@ function Products(props) {
   }
   const renderProducts = () => {
     return (
-      <Table responsive="sm" style={{ marginLeft: '100px', marginTop: '50px',padding:'50px' }} >
+      <Table  style={{width:'85vw'}}>
         <thead>
           <tr>
             <th>#</th>
@@ -75,9 +77,9 @@ function Products(props) {
             <th>Price</th>
             <th>Quantity</th>
             <th>Category</th>
-             <th>See</th>
-             <th>Edit</th>
-             <th>Delete</th>
+            <th>See</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -92,9 +94,9 @@ function Products(props) {
                   <td>{p.quantity}</td>
                   {/* <td>{p.descripation}</td> */}
                   <td>{p.category.name}</td>
-                  <td>{<AiOutlineEye/>}</td>
-                  <td>{<AiOutlineEdit/>}</td>
-                  <td>{<RiDeleteBinLine/>}</td>
+                  <td>{<AiOutlineEye />}</td>
+                  <td>{<AiOutlineEdit />}</td>
+                  <td>{<RiDeleteBinLine />}</td>
                 </tr>
 
               )
@@ -198,7 +200,7 @@ function Products(props) {
           <Col md="6">
             <label className='key'>Category</label>
             <p className='value'>{productDetails.category.name}</p>
-            
+
           </Col>
         </Row>
         <Row>
@@ -206,21 +208,21 @@ function Products(props) {
             <label className='key'>Descripation</label>
             <p className='value'>{productDetails.description}</p>
           </Col>
-         
+
 
         </Row>
         <Row>
           <Col >
-          <label className='key'>Product Pictures</label>
-          < div style={{display:'flex'}}>
-          {productDetails.productPictures.map(picture=>
-             <div className='productImgContainer'>
-              <img src={generatePublicUrl(picture.img)}/>
-             </div>
-            
-            )}
-          </div>
-           
+            <label className='key'>Product Pictures</label>
+            < div style={{ display: 'flex' }}>
+              {productDetails.productPictures.map(picture =>
+                <div className='productImgContainer'>
+                  <img src={generatePublicUrl(picture.img)} />
+                </div>
+
+              )}
+            </div>
+
           </Col>
 
         </Row>
@@ -229,32 +231,30 @@ function Products(props) {
   }
 
   return (<>
-    <Layout />
-   
-    <Container >
+
+
+
+    <div  style={{width:'80vw'}}>
     <Sidebar name="Products" />
-       <Container style={{marginLeft:'10px'}}>
-       <Row >
-        <Col md={12}>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <h3>Category</h3>
-            <button onClick={handleShow}>Add</button>
-          </div>
-        </Col>
-      </Row>
-       </Container>
-     
-      <Container fluid style={{marginLeft:'10px'}}>
-      <Row>
-        <Col>
-          {
-            renderProducts()
-          }
-        </Col>
-      </Row>
-      </Container>
-      
-    </Container >
+
+
+      {/* <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <h3>Category</h3>
+        <button onClick={handleShow}>Add</button>
+      </div> */}
+
+
+      <div>
+        <Row>
+          <Col>
+            {
+              renderProducts()
+            }
+          </Col>
+        </Row>
+      </div>
+
+    </div >
     {
       renderAddProductModel()
     }

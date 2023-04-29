@@ -12,20 +12,20 @@ import {CgProfile} from 'react-icons/cg'
 
 const Sidebar=(props)=> {
   return (
-    <Container fluid  >
+    <div   >
     <Row>
         <Col md={2} className="sidebar">
             <ul>
-                <li><NavLink to={'/'}><div className='sidebarcontain'><div className='sidebaricon'><AiOutlineHome  /></div> <div className='sidebarname'>Home</div></div> </NavLink></li>
+                <li><NavLink to={'/'}><div className='sidebarcontain'><div className='sidebaricon'><AiOutlineHome  /></div> <div className='sidebarname' tittle='Home'>Home</div></div> </NavLink></li>
                 <li><NavLink to={'/category'}><div className='sidebarcontain'><div className='sidebaricon'><BiCategory /></div> <div className='sidebarname'>Category</div></div>   </NavLink></li>
                 <li><NavLink to={'/products'}><div className='sidebarcontain'><div className='sidebaricon'><GrProductHunt/> </div> <div className='sidebarname'>Products</div></div>      </NavLink></li>
                 <li><NavLink to={'/orders'}> <div className='sidebarcontain'><div className='sidebaricon'><BsFillCartCheckFill  /></div> <div className='sidebarname'>Orders</div></div> </NavLink></li>
                 <li><NavLink to={'/profile'}> <div className='sidebarcontain'><div className='sidebaricon'><CgProfile /></div> <div className='sidebarname'>Profile</div></div> </NavLink></li>
             </ul>
         </Col>
-        <Col md={10} style={{width:'80%'}}>{props.name}</Col>
+      
       </Row>
-    </Container> 
+    </div> 
   )
 }
 

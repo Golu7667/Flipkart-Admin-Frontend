@@ -41,7 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category/>}  />
-        <Route path="/products" element={<Privateroute name={<Products/>} />} />
+        <Route path="/products" element={<Products/>} />
         <Route path="/orders" element={<Privateroute name={<Orders/>}/>} />
 
 

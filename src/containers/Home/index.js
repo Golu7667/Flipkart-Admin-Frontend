@@ -3,12 +3,15 @@ import Layout from '../../components/Layout/index';
 import Container from 'react-bootstrap/Container';
 import {Row,Col} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import './index.css'
+// import './index.css'
 import Sidebar from '../../components/Layout/sidebar';
+import Widget from '../../components/Layout/Widget'
+
 const Home = (props) => {
     return (
         <>
             <Layout />
+         
             {/* <Container fluid>
             <Row>
                 <Col md={2} className="sidebar">
