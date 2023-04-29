@@ -81,46 +81,86 @@ const Category = () => {
   }
   return (
     <>
-      <Layout />
+
 
       <div style={{ width: '100%', display: 'flex' }} >
-      <div style={{width:'15%'}}>
-        <Sidebar />
+        <div style={{ width: '15%' }}>
+          <Sidebar />
         </div>
-         <div style={{width:'85%'}}>
-        {/* < div style={{ height: '50px', backgroundColor: 'red', width: 'auto' }}>
-          
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <h3>Category</h3>
-                <button onClick={handleShow} style={{ borderRadius: 5, fontSize: 20 }}>Add</button>
+        <div style={{ width: '84%' }}>
+          < div style={{ height: '60px', backgroundColor: 'white', width: 'auto', marginBottom: '10px' }}>
 
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
-              </div>
-          
-        </div>  */}
-
-        <div style={{marginTop:'50px'}}>
-          <div class="card" style={{ width: '18rem', margin: '0px 0px 0px 0px' }}>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <button onClick={handleShow} style={{ borderRadius: 5, fontSize: 20, marginTop: '10px' }}>Add</button>
+              <button onClick={handleShow} style={{ borderRadius: 5, fontSize: 20, marginTop: '10px' }}>Edit</button>
+              <button onClick={handleShow} style={{ borderRadius: 5, fontSize: 20, marginTop: '10px' }}>Delete</button>
+              <button onClick={handleShow} style={{ borderRadius: 5, fontSize: 20, marginTop: '10px' }}>Update</button>
             </div>
+
           </div>
-          <div class="card" style={{ width: '18rem', margin: '0px 0px 0px 0px' }}>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+
+
+          <div >
+            <div class="row">
+              <div class="col-sm-3" >
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div >
-      </div>
+    </div >
       <Model
         show={show}
         handleClose={handleClose}

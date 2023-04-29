@@ -80,8 +80,9 @@
 }
 .sidebar ul li a.active{
     background: rgb(253, 251, 251);
-    width: 59px;
+    width: 65px;
      height:70px ;
+    
      justify-content: center;
 }
 }
