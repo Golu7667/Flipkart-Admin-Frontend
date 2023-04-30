@@ -72,7 +72,8 @@ function Products(props) {
       <Table  style={{width:'85vw'}}>
         <thead>
           <tr>
-            <th>#</th>
+            <th>No</th>
+            <th>ProductId</th>
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
@@ -86,17 +87,19 @@ function Products(props) {
           {
 
             product.products.length > 0 ?
-              product.products.map(p =>
-                <tr onClick={() => showProductDetailsModal(p)} key={p._id}>
-                  <td>1</td>
+              product.products.map((p,index) =>
+                <tr >
+                  <td>{index+1}</td>
+                  <td>{p._id}</td>
                   <td>{p.name}</td>
                   <td>{p.price}</td>
                   <td>{p.quantity}</td>
-                  {/* <td>{p.descripation}</td> */}
                   <td>{p.category.name}</td>
-                  <td>{<AiOutlineEye />}</td>
-                  <td>{<AiOutlineEdit />}</td>
-                  <td>{<RiDeleteBinLine />}</td>
+                 
+                  <td  onClick={() => showProductDetailsModal(p)} key={p._id}>{<AiOutlineEye />}</td>
+                  <td onClick={() => showProductDetailsModal(p)} key={p._id}>{<AiOutlineEdit />}</td>
+                  <td onClick={() => showProductDetailsModal(p)} key={p._id}>{<RiDeleteBinLine />}</td>
+                
                 </tr>
 
               )
@@ -234,24 +237,28 @@ function Products(props) {
 
 
 
-    <div  style={{width:'80vw'}}>
+    <div  style={{width:'100%',display:'flex'}}>
+    <div style={{width:'15%'}}>
     <Sidebar name="Products" />
+    </div  >
+
+      
 
 
-      {/* <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{width:'85%'}}>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <h3>Category</h3>
         <button onClick={handleShow}>Add</button>
-      </div> */}
+      </div>
 
 
-      <div>
-        <Row>
-          <Col>
+        {/* <Row>
+          <Col> */}
             {
               renderProducts()
             }
-          </Col>
-        </Row>
+          {/* </Col>
+        </Row> */}
       </div>
 
     </div >

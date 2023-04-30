@@ -45,18 +45,23 @@ const Category = () => {
 
     for (let category of categories) {
       myCategories.push(
-        <div style={{ width: '500px', border: '2px solid green', height: '50px', display: 'flex', }}>
+        < div class="col-sm-5" style={{ margin: '10px 0px 10px 0px', color: 'green' }}>
+          <div class="card">
+            <div class="card-body" >
+              <h5 class="card-title" >
 
-          {<MDBCheckbox name='flexCheck' value='1' id='q' label={category.name} />}
-          <div style={{ display: 'flex' }}>
+                <input type='checkbox' />
 
 
-            {category.name}
+                {
+                  category.name
+                }
 
+              </h5>
+
+            </div>
           </div>
-          {/* {category.children.length > 0 ? (<ul style={{width:'100px' }}>{  renderCategories(category.children)}</ul>) : null} */}
-
-        </div>
+        </div >
       )
     }
     return myCategories
@@ -79,6 +84,8 @@ const Category = () => {
 
     console.log(e.target.files[0])
   }
+  // console.log(category.categories[0].name)
+
   return (
     <>
 
@@ -88,7 +95,7 @@ const Category = () => {
           <Sidebar />
         </div>
         <div style={{ width: '84%' }}>
-          < div style={{ height: '60px', backgroundColor: 'white', width: 'auto', marginBottom: '10px' }}>
+          < div style={{ height: '60px', backgroundColor: 'yellow', width: 'auto', marginBottom: '10px' }}>
 
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
@@ -102,65 +109,13 @@ const Category = () => {
 
 
           <div >
-            <div class="row">
-              <div class="col-sm-3" >
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
+            <div class="row" style={{ backgroundColor: '#ccc' }}>
 
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
+              {renderCategories(category.categories)}
             </div>
           </div>
-        </div>
+        </div >
       </div >
-    </div >
       <Model
         show={show}
         handleClose={handleClose}
